@@ -22,6 +22,7 @@ describe('Board', function() {
     });
 
     it('should not find a majorDiagonal conflict', function() {
+      debugger;
       expect(board.hasAnyMajorDiagonalConflicts()).to.be.equal(false);
     });
 
@@ -124,6 +125,7 @@ describe('Board', function() {
     });
 
     it('should find a majorDiagonal conflict', function() {
+
       expect(board.hasAnyMajorDiagonalConflicts()).to.be.equal(true);
     });
 
@@ -194,6 +196,8 @@ describe('Board', function() {
     });
 
     it('should find a minorDiagonal conflict', function() {
+      console.log('board', board);
+      debugger;
       expect(board.hasAnyMinorDiagonalConflicts()).to.be.equal(true);
     });
 
