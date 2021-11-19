@@ -114,14 +114,13 @@
     hasColConflictAt: function(colIndex) {
       // go over all spaces of column colIndex
       var counter = 0;
-      for (var i = 0; i < this.rows().length; i++) {
-        var row = this.rows()[i];
-        if (row[colIndex] === 1) {
+      for (var i = 0; i < this.attributes.n; i++) {
+        if (this.attributes[i][colIndex] === 1) {
           counter++;
         }
-      }
-      if (counter > 1) {
-        return true;
+        if (counter > 1) {
+          return true;
+        }
       }
 
       return false; // fixme
@@ -129,7 +128,7 @@
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
-      for (var i = 0; i < this.rows().length; i++) {
+      for (var i = 0; i < this.attributes.n; i++) {
         if (this.hasColConflictAt(i)) {
           return true;
         }
@@ -297,3 +296,4 @@
   };
 
 }());
+
